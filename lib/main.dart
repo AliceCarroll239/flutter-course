@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
 int statelessCount = 0;
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter Course App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Task 3.4 Demo'),
+          title: Text('Task 3.5 Demo'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,8 +37,13 @@ class SampleStatelessWidget extends StatelessWidget {
     statelessCount++;
     print('Stateless count: $statelessCount');
     return Center(
-      child: Text('Stateless count: $statelessCount', style: Theme.of(context).textTheme.headline4),
+      child: Text('Stateless count: $statelessCount',
+          style: Theme.of(context).textTheme.headline4),
     );
+  }
+
+  Type returnContextRuntimeType() {
+     // return context.runtimeType;  // Undefined name 'context'.
   }
 }
 
@@ -60,7 +66,12 @@ class _SampleStatefulWidget extends State<SampleStatefulWidget> {
     statefulCount++;
     print('Stateful count: $statefulCount');
     return Center(
-      child: Text('Stateful count: $statefulCount', style: Theme.of(context).textTheme.headline4),
+      child: Text('Stateful count: $statefulCount',
+          style: Theme.of(context).textTheme.headline4),
     );
+  }
+
+  Type returnContextRuntimeType() {
+    return context.runtimeType;
   }
 }
